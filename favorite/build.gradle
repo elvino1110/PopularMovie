@@ -7,7 +7,7 @@ apply from: '../shared_dependencies.gradle'
 
 android {
     namespace 'com.example.popularmovie.favorite'
-    compileSdkVersion 33
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 24
