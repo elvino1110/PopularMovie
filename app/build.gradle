@@ -9,7 +9,7 @@ apply from: '../shared_dependencies.gradle'
 
 android {
     namespace 'com.example.popularmovie'
-    compileSdk 30
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.popularmovie"
