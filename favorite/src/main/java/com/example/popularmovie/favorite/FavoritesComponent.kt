@@ -1,10 +1,10 @@
 package com.example.popularmovie.favorite
 
 import android.content.Context
-import com.example.popularmovie.di.FavoritesModuleDependencies
 import dagger.BindsInstance
 import dagger.Component
 
+/*
 @Component(dependencies = [FavoritesModuleDependencies::class])
 interface FavoritesComponent {
 
@@ -16,4 +16,4 @@ interface FavoritesComponent {
         fun appDependencies(favoritesModuleDependencies: FavoritesModuleDependencies): Builder
         fun build(): FavoritesComponent
     }
-}
+}*/

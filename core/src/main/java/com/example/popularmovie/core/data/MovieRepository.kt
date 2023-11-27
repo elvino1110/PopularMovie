@@ -14,8 +14,11 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class MovieRepository @Inject constructor(
+/*@Singleton*/
+
+class MovieRepository
+/*@Inject constructor*/
+(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
@@ -67,3 +70,65 @@ class MovieRepository @Inject constructor(
         }.asFlow()
 
 }
+/*
+class MovieRepository (
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource,
+    private val appExecutors: AppExecutors
+): IMovieRepository {
+    override fun getAllPopularMovie(): Flow<Resource<List<Movie>>> {
+        return object : NetworkBoundResource<List<Movie>, List<ResultsItem>>() {
+            override fun loadFromDB(): Flow<List<Movie>> {
+                return localDataSource.getAllPopularMovie().map {
+                    DataMapper.mapEntitiesToDomain(it)
+                }
+            }
+
+            override suspend fun createCall(): Flow<ApiResponse<List<ResultsItem>>> {
+                return remoteDataSource.getAllPopularMovie()
+            }
+
+            override suspend fun saveCall(data: List<ResultsItem>) {
+                val entity = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertFavoritePopularMovie(entity)
+            }
+
+            override fun shouldFetch(data: List<Movie>?): Boolean {
+                return true
+            }
+
+        }.asFlow()
+    }
+
+    override fun getFavoritePopularMovie(): Flow<List<Movie>> {
+        return localDataSource.getFavoritePopularMovie().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
+    }
+
+    override fun setFavoritePopularMovie(movie: Movie, state: Boolean) {
+        val entity = DataMapper.mapDomainToEntity(movie)
+        appExecutors.diskIO().execute {
+            localDataSource.setFavoritePopularMovie(entity, state)
+        }
+    }
+
+    override fun getSearchMovie(query: String): Flow<Resource<List<Movie>>> =
+        object : NetworkBoundResource<List<Movie>, List<ResultsItem>>() {
+            override fun loadFromDB(): Flow<List<Movie>> {
+                // Tidak ada perlu untuk mengambil data dari database lokal untuk pencarian
+                return flow { emit(emptyList()) }
+            }
+
+            override suspend fun createCall(): Flow<ApiResponse<List<ResultsItem>>> =
+                remoteDataSource.getAllSearchMovie(query)
+
+            override suspend fun saveCall(data: List<ResultsItem>) {
+                val entity = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertFavoritePopularMovie(entity)
+            }
+
+            override fun shouldFetch(data: List<Movie>?): Boolean = true
+        }.asFlow()
+
+}*/

@@ -11,25 +11,29 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.popularmovie.core.ui.MovieAdapter
 import com.example.popularmovie.detail.DetailActivity
-import com.example.popularmovie.di.FavoritesModuleDependencies
 import com.example.popularmovie.favorite.databinding.ActivityFavoriteBinding
+import com.example.popularmovie.favorite.di.favouriteModule
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.GlobalContext.loadKoinModules
 import javax.inject.Inject
 
 class FavoriteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoriteBinding
 
-    @Inject
+    /*@Inject
     lateinit var factory: ViewModelFactory
 
     private val favoriteViewModel: FavoriteViewModel by viewModels {
         factory
-    }
+    }*/
+    private val favoriteViewModel: FavoriteViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        DaggerFavoritesComponent.builder()
+        loadKoinModules(favouriteModule)
+        /*DaggerFavoritesComponent.builder()
             .context(this)
             .appDependencies(
                 EntryPointAccessors.fromApplication(
@@ -38,7 +42,7 @@ class FavoriteActivity : AppCompatActivity() {
                 )
             )
             .build()
-            .inject(this)
+            .inject(this)*/
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)

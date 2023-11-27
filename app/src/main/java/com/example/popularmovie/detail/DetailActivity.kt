@@ -15,9 +15,10 @@ import com.example.popularmovie.core.domain.model.Movie
 import com.example.popularmovie.core.utils.withDateFormat
 import com.example.popularmovie.databinding.ActivityDetailBinding
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+/*@AndroidEntryPoint*/
 class DetailActivity : AppCompatActivity() {
 
     companion object {
@@ -28,7 +29,7 @@ class DetailActivity : AppCompatActivity() {
 
 
 
-    private val detailViewModel: DetailViewModel by viewModels()
+    private val detailViewModel: DetailViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

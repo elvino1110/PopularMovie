@@ -4,7 +4,7 @@ import com.example.popularmovie.core.domain.model.Movie
 import com.example.popularmovie.core.domain.repository.IMovieRepository
 import javax.inject.Inject
 
-class MovieInteractor @Inject constructor(private val movieRepository: IMovieRepository) : MovieUseCase {
+class MovieInteractor /*@Inject constructor*/(private val movieRepository: IMovieRepository) : MovieUseCase {
 
     override fun getAllPopularMovie() = movieRepository.getAllPopularMovie()
 

@@ -27,7 +27,7 @@ buildscript {
     ext.fragment_ktx_version = '1.2.5'
 
     ext.hilt_version = '2.40.1'
-        ext.hilt_jetpack_version = '1.0.0-alpha03'
+    ext.hilt_jetpack_version = '1.0.0-alpha03'
 
     ext.rounded_image = "2.3.0"
     ext.lottieVersion = "3.7.0"
@@ -38,7 +38,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.1'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 

@@ -11,8 +11,8 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class RemoteDataSource @Inject constructor(private val apiService: ApiService){
+/*@Singleton*/
+class RemoteDataSource/* @Inject constructor*/(private val apiService: ApiService){
 
     suspend fun getAllPopularMovie() : Flow<ApiResponse<List<ResultsItem>>> {
 

@@ -10,22 +10,23 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import androidx.activity.viewModels
+/*import androidx.activity.viewModels*/
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.popularmovie.R
 import com.example.popularmovie.core.data.Resource
 import com.example.popularmovie.core.ui.MovieAdapter
 import com.example.popularmovie.databinding.ActivityMainBinding
 import com.example.popularmovie.detail.DetailActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.observeOn
 
-@AndroidEntryPoint
+/*@AndroidEntryPoint*/
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModel()
     private val movieAdapter = MovieAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {

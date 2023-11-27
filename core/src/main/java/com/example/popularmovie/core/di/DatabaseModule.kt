@@ -11,8 +11,11 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.module
 import javax.inject.Singleton
 
+/*
 @Module
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
@@ -35,4 +38,17 @@ class DatabaseModule {
 
     @Provides
     fun provideMovieDao(database: MovieDatabase) : MovieDao = database.movieDao()
+}*/
+val databaseModule = module {
+    factory { get<MovieDatabase>().movieDao() }
+    single {
+        val key : ByteArray = SQLiteDatabase.getBytes("movie".toCharArray())
+        val factory = SupportFactory(key)
+        Room.databaseBuilder(
+            androidContext(),
+            MovieDatabase::class.java, "MoviePopularNew.db"
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
+    }
 }

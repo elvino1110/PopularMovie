@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.popularmovie.core.domain.usecase.MovieUseCase
 import javax.inject.Inject
 
+/*
 class ViewModelFactory @Inject constructor(private val movieUseCase: MovieUseCase) :
     ViewModelProvider.NewInstanceFactory() {
 
@@ -16,4 +17,4 @@ class ViewModelFactory @Inject constructor(private val movieUseCase: MovieUseCas
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
-}
+}*/

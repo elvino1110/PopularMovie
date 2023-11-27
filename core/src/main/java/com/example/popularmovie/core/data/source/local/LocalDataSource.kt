@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class LocalDataSource @Inject constructor(private val movieDao: MovieDao){
+/*@Singleton*/
+class LocalDataSource/* @Inject constructor*/(private val movieDao: MovieDao){
 
     fun getAllPopularMovie(): Flow<List<MovieEntity>> = movieDao.getAllPopularMovie()
 
