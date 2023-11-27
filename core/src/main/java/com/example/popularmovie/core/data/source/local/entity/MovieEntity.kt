@@ -25,8 +25,8 @@ data class MovieEntity(
     @ColumnInfo(name = "poster_path")
     var posterPath: String,
 
-    @ColumnInfo(name = "backdrop_path")
-    var backdropPath: String,
+   /* @ColumnInfo(name = "backdrop_path")
+    var backdropPath: String,*/
 
     @ColumnInfo(name = "release_date")
     var releaseDate: String,

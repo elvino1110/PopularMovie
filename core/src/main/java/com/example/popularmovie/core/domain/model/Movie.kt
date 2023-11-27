@@ -18,7 +18,7 @@ data class Movie(
 
     val posterPath: String,
 
-    val backdropPath: String,
+    /*val backdropPath: String,*/
 
     val releaseDate: String,
 

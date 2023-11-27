@@ -16,7 +16,7 @@ object DataMapper {
                 video = it.video,
                 title = it.title,
                 posterPath = it.posterPath,
-                backdropPath = it.backdropPath,
+                /*backdropPath = it.backdropPath,*/
                 releaseDate = it.releaseDate,
                 popularity = it.popularity,
                 voteAverage = it.voteAverage,
@@ -39,7 +39,7 @@ object DataMapper {
                 video = it.video,
                 title = it.title,
                 posterPath = it.posterPath,
-                backdropPath = it.backdropPath,
+                /*backdropPath = it.backdropPath,*/
                 releaseDate = it.releaseDate,
                 popularity = it.popularity,
                 voteAverage = it.voteAverage,
@@ -57,7 +57,7 @@ object DataMapper {
         video = input.video,
         title = input.title,
         posterPath = input.posterPath,
-        backdropPath = input.backdropPath,
+        /*backdropPath = input.backdropPath,*/
         releaseDate = input.releaseDate,
         popularity = input.popularity,
         voteAverage = input.voteAverage,

@@ -53,7 +53,7 @@ class DetailActivity : AppCompatActivity() {
         detailMovie?.let {
             binding.tvTitle.text = detailMovie.title
             Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w500${detailMovie.backdropPath}")
+                .load("https://image.tmdb.org/t/p/w500${detailMovie.posterPath}")
                 .placeholder(R.drawable.baseline_image_24)
                 .into(binding.ivDetailImage)
             binding.tvOverview.text = detailMovie.overview

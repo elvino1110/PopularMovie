@@ -11,14 +11,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import org.koin.dsl.module
 
-/*
-@Module(includes = [NetworkModule::class, DatabaseModule::class])
-@InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
-
-    @Binds
-    abstract fun provideRepository(movieRepository: MovieRepository): IMovieRepository
-}*/
 val repositoryModule = module {
     single { LocalDataSource(get()) }
     single { RemoteDataSource(get()) }
