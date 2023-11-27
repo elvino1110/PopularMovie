@@ -16,7 +16,7 @@
         tools:targetApi="30">
         <activity
             android:name=".detail.DetailActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".main.MainActivity"
             android:exported="true">
